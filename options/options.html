@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Job Autofill — My Profile</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <header>
+    <h1>Job Autofill — My Profile</h1>
+    <p class="sub">Saved only in this browser (chrome.storage.local). Nothing is sent anywhere.</p>
+    <div class="actions">
+      <button id="save" class="primary">Save</button>
+      <button id="export">Export JSON</button>
+      <label class="btn">Import JSON<input type="file" id="import" accept="application/json" hidden></label>
+      <span id="status"></span>
+    </div>
+  </header>
+
+  <main>
+    <div id="sections"></div>
+
+    <section>
+      <h2>Work experience <small>(most recent first — fills Workday "My Experience")</small></h2>
+      <div id="experiences"></div>
+      <button data-add="experiences">+ Add job</button>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div id="education"></div>
+      <button data-add="education">+ Add school</button>
+    </section>
+
+    <section>
+      <h2>Custom answers <small>(for questions not covered above)</small></h2>
+      <p class="hint">If a question contains <b>all</b> the keywords (comma-separated), this answer is used. Works for text boxes, dropdowns and Yes/No radios. Custom answers win over the defaults above.<br>
+        Examples: <code>salesforce, years</code> → <code>15</code> · <code>non-compete</code> → <code>No</code> · <code>security clearance</code> → <code>No</code></p>
+      <div id="customAnswers"></div>
+      <button data-add="customAnswers">+ Add answer</button>
+    </section>
+  </main>
+
+  <script src="options.js"></script>
+</body>
+</html>

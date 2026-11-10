@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 280px; margin: 0; padding: 14px; font: 13px/1.4 system-ui, sans-serif; color: #1f2937; }
+    body.wide { width: 520px; }
+    h1 { font-size: 15px; margin: 0 0 10px; }
+    button { width: 100%; padding: 9px; font: inherit; font-weight: 600; border-radius: 7px; cursor: pointer; border: 1px solid #d1d5db; background: #fff; margin-bottom: 8px; }
+    button:hover { background: #f3f4f6; }
+    #fill { background: #2563eb; border-color: #2563eb; color: #fff; font-size: 14px; }
+    #fill:hover { background: #1d4ed8; }
+    #msg { margin: 4px 0 8px; min-height: 18px; }
+    .err { color: #b91c1c; }
+    .ok { color: #15803d; }
+    label.ow { display: flex; gap: 6px; align-items: center; color: #4b5563; margin-bottom: 10px; }
+    .foot { color: #9ca3af; font-size: 11px; margin-top: 4px; }
+    #learned { display: none; border-top: 1px solid #e5e7eb; padding-top: 10px; margin-bottom: 10px; }
+    #learned h2 { font-size: 13px; margin: 0 0 4px; }
+    #learned .hint { color: #6b7280; font-size: 11px; margin: 0 0 8px; }
+    .item { display: grid; grid-template-columns: 18px 1fr; gap: 2px 8px; padding: 8px 0; border-bottom: 1px solid #f3f4f6; }
+    .item .q { color: #6b7280; font-size: 11px; grid-column: 2; }
+    .item input[type=text] { grid-column: 2; font: inherit; font-size: 12px; padding: 4px 6px; border: 1px solid #d1d5db; border-radius: 5px; }
+    .item .lbl { grid-column: 2; font-size: 10px; color: #9ca3af; text-transform: uppercase; letter-spacing: .03em; margin-top: 2px; }
+    #saveLearned { background: #15803d; border-color: #15803d; color: #fff; margin-top: 8px; }
+    #saveLearned:hover { background: #166534; }
+  </style>
+</head>
+<body>
+  <h1>Job Autofill</h1>
+  <button id="fill">Fill this application</button>
+  <label class="ow"><input type="checkbox" id="overwrite"> Overwrite fields that already have text</label>
+  <div id="msg"></div>
+  <button id="learn">Learn from this page</button>
+  <div id="learned">
+    <h2>New answers found on this page</h2>
+    <p class="hint">Untick anything you don't want saved. A question matches when it contains <b>all</b> the keywords, so edit them to be shorter or more specific if needed.</p>
+    <div id="items"></div>
+    <button id="saveLearned">Save selected to my profile</button>
+  </div>
+  <button id="settings">Edit my profile</button>
+  <div class="foot">Shortcut: Alt+Shift+F · Never submits for you</div>
+  <script src="../src/inject.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

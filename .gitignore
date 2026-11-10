@@ -1,0 +1,5 @@
+node_modules/
+tests/pages/index.html
+*.png
+!icons/*.png
+*.zip
